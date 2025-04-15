@@ -11,3 +11,9 @@ def divide (a, b):
 def power (a, b):
     return a ** b
 
+if __name__ == "__main__":
+    print("Sum:", add(2, 3))
+    print("Difference:", subtract(5, 3))
+    print("Product:", multiply(2, 3))
+    print("Quotient:", divide(6, 3))
+    print("Power:", power(2, 3))
