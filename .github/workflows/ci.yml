@@ -26,3 +26,18 @@ jobs:
       - name: Run Tests
         run: |
           pytest
+  deploy:
+      needs: test
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main'
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+        
+        - name: Simulate deployment
+          run: |
+            echo "All tests passed!"
+            echo "Deploying calculator.py"
+            mkdir deployment
+            cp calculator.py deployment/ 
+            echo "Deployed calculator.py to deployment/ folder"
